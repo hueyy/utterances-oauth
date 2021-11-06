@@ -6,7 +6,7 @@
   "scripts": {
     "start": "cfworker run --watch --inspect src/index.ts",
     "build": "cfworker build src/index.ts",
-    "deploy": "cfworker deploy --name utteranc-es --route 'api.utteranc.es/*' src/index.ts"
+    "deploy": "cfworker deploy --name utterances --route 'utterances-api.huey.xyz/*' src/index.ts"
   },
   "repository": {
     "type": "git",

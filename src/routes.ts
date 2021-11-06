@@ -70,6 +70,8 @@ async function authorizeRequestHandler(origin: string, search: URLSearchParams) 
 
   const appReturnUrl = search.get('redirect_uri');
 
+  const scope = [`repo`]
+
   if (!appReturnUrl) {
     return badRequest(`"redirect_uri" is required.`);
   }
@@ -80,7 +82,7 @@ async function authorizeRequestHandler(origin: string, search: URLSearchParams) 
     status: 302,
     statusText: 'found',
     headers: {
-      Location: `${authorizeUrl}?${new URLSearchParams({ client_id, redirect_uri, state })}`
+      Location: `${authorizeUrl}?${new URLSearchParams({ client_id, redirect_uri, state, scope: scope.join(`, `) })}`
     }
   });
 }

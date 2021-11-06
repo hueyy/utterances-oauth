@@ -49,3 +49,9 @@ Then execute:
 ```
 yarn run deploy
 ```
+
+## Notes to self
+
+- use API key and not API token in `.env` file (see [this GitHub issue](https://github.com/kubernetes-sigs/external-dns/issues/342#issuecomment-592300626))
+- set `WEBHOOK_SECRET` in `.env` file to some placeholder value to avoid `process.env` error
+- Cloudflare free SSL certs only cover a single level of subdomains, [not 2nd and greater level subdomains](https://community.cloudflare.com/t/community-tip-fixing-err-ssl-version-or-cipher-mismatch-in-google-chrome/42162)

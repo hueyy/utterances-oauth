@@ -17,6 +17,8 @@ Create a file named `.env` at the root. File should have the following values:
 - CLIENT_SECRET: The client secret for the OAuth web application flow
 - STATE_PASSWORD: 32 character password for encrypting state in request headers/cookies. Generate [here](https://lastpass.com/generatepassword.php).
 - ORIGINS: comma delimited list of permitted origins. For CORS.
+- WEBHOOK_SECRET: this is for a future feature. for now, make sure you include it (it can just be an empty string) or an error will be thrown
+- CLOUDFLARE: the CloudFlare environment variables are explained in the [@cfworker/dev](https://www.npmjs.com/package/@cfworker/dev) docs. just be sure to use an API **key** rather than an API **token**, despite the fact that the CloudFlare documentation [seems to suggest you should do the latter](https://github.com/kubernetes-sigs/external-dns/issues/342#issuecomment-592300626)
 
 Example:
 
@@ -26,6 +28,12 @@ CLIENT_ID=aaaaaaaaaaaaaaaaaaaa
 CLIENT_SECRET=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 STATE_PASSWORD=01234567890123456789012345678901
 ORIGINS=https://utteranc.es,http://localhost:9000
+WEBHOOK_SECRET=""
+CLOUDFLARE_EMAIL=
+CLOUDFLARE_API_KEY=
+CLOUDFLARE_ZONE_ID=
+CLOUDFLARE_ACCOUNT_ID=
+CLOUDFLARE_WORKERS_DEV_PROJECT=
 ```
 
 ## run locally
